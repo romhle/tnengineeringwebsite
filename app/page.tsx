@@ -1,65 +1,142 @@
-import Image from "next/image";
+import Link from "next/link";
+
+const services = [
+  {
+    title: "Access Control & Security Systems",
+    desc: "Biometrics, mobile credentials, CCTV, intrusion detection and centralized management.",
+  },
+  {
+    title: "Smart Technology Integration",
+    desc: "Smart lighting, intelligent breakers, automated door systems and unified control platforms.",
+  },
+  {
+    title: "Renewable Energy Systems",
+    desc: "Grid-tied, hybrid and off-grid solar with monitoring and commercial-scale installations.",
+  },
+  {
+    title: "Mechanical Engineering",
+    desc: "HVAC, steelwork, plant installation, machining and mechanical optimization.",
+  },
+  {
+    title: "Rigging & Heavy Equipment Services",
+    desc: "Certified lifting, relocation, complex lift planning and industrial positioning.",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <main>
+      {/* Hero */}
+      <section className="mx-auto max-w-6xl px-6 py-16">
+        <p className="text-sm text-gray-600">
+          Integrated Engineering • Security • Automation • Renewable Energy • Industrial Services
+        </p>
+
+        <h1 className="mt-4 text-4xl font-bold tracking-tight md:text-5xl">
+          Integrated Engineering Solutions for a Smarter, Safer Future
+        </h1>
+
+        <p className="mt-4 max-w-2xl text-lg text-gray-600">
+          T.N Engineering Pty Ltd blends proven mechanical expertise with modern digital technology
+          to deliver security, automation, renewable energy and heavy industrial support — built for reliability,
+          safety and performance.
+        </p>
+
+        <div className="mt-8 flex flex-wrap gap-3">
+          <Link
+            href="/contact"
+            className="rounded-xl bg-black px-5 py-3 text-sm font-medium text-white"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
+            Request a Quote
+          </Link>
           <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="tel:+27733061438"
+            className="rounded-xl border border-gray-300 px-5 py-3 text-sm font-medium"
           >
-            Documentation
+            Call (+27) 73 306 1438
           </a>
+          <Link
+            href="/services"
+            className="rounded-xl border border-gray-300 px-5 py-3 text-sm font-medium"
+          >
+            View Services
+          </Link>
         </div>
-      </main>
-    </div>
+
+        <div className="mt-10 grid gap-3 text-sm text-gray-700 md:grid-cols-4">
+          <div className="rounded-2xl border p-4">Single-provider integrated solutions</div>
+          <div className="rounded-2xl border p-4">Certified expertise & safe delivery</div>
+          <div className="rounded-2xl border p-4">Smart systems & modern tooling</div>
+          <div className="rounded-2xl border p-4">Tailored installs for any site</div>
+        </div>
+      </section>
+
+      {/* Services */}
+      <section className="border-t bg-gray-50">
+        <div className="mx-auto max-w-6xl px-6 py-14">
+          <div className="flex items-end justify-between gap-6">
+            <div>
+              <h2 className="text-2xl font-semibold">Core Services</h2>
+              <p className="mt-2 text-gray-600">
+                End-to-end solutions across security, smart integration, energy and industry.
+              </p>
+            </div>
+            <Link href="/services" className="text-sm font-medium underline">
+              Explore all services
+            </Link>
+          </div>
+
+          <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {services.map((s) => (
+              <div key={s.title} className="rounded-2xl border bg-white p-6">
+                <div className="font-semibold">{s.title}</div>
+                <p className="mt-2 text-sm text-gray-600">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="mx-auto max-w-6xl px-6 py-14">
+        <h2 className="text-2xl font-semibold">Why Choose T.N Engineering</h2>
+
+        <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {[
+            "Integrated Solutions (single-provider advantage)",
+            "Certified Expertise (qualified engineers & technicians)",
+            "Quality Assurance (stringent safety and standards)",
+            "Innovation Focus (modern tech implementation)",
+            "Client-Centric Approach (tailored solutions)",
+            "Proven Track Record (multi-sector delivery)",
+          ].map((item) => (
+            <div key={item} className="rounded-2xl border p-6">
+              <div className="font-medium">{item}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="border-t">
+        <div className="mx-auto max-w-6xl px-6 py-14">
+          <div className="rounded-3xl bg-black p-10 text-white">
+            <h2 className="text-3xl font-semibold">Contact us to engineer your success.</h2>
+            <p className="mt-3 max-w-2xl text-white/80">
+              Tell us what you need — security, automation, solar, mechanical work or rigging — and we’ll propose
+              a practical, compliant solution.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Link href="/contact" className="rounded-xl bg-white px-5 py-3 text-sm font-medium text-black">
+                Request a Quote
+              </Link>
+              <a href="mailto:info@tnengineering.co.za" className="rounded-xl border border-white/30 px-5 py-3 text-sm font-medium">
+                Email Us
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }
