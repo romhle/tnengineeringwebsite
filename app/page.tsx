@@ -179,7 +179,7 @@ export default function HomePage() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/hero/hero-solar.png"
+            src="/images/hero/hero-solar.jpg"
             alt="T.N Engineering installation hero"
             fill
             priority
