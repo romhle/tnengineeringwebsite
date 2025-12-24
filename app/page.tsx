@@ -1,142 +1,182 @@
+import Image from "next/image";
 import Link from "next/link";
 
-const services = [
-  {
-    title: "Access Control & Security Systems",
-    desc: "Biometrics, mobile credentials, CCTV, intrusion detection and centralized management.",
-  },
-  {
-    title: "Smart Technology Integration",
-    desc: "Smart lighting, intelligent breakers, automated door systems and unified control platforms.",
-  },
-  {
-    title: "Renewable Energy Systems",
-    desc: "Grid-tied, hybrid and off-grid solar with monitoring and commercial-scale installations.",
-  },
-  {
-    title: "Mechanical Engineering",
-    desc: "HVAC, steelwork, plant installation, machining and mechanical optimization.",
-  },
-  {
-    title: "Rigging & Heavy Equipment Services",
-    desc: "Certified lifting, relocation, complex lift planning and industrial positioning.",
-  },
-];
-
-export default function Home() {
+export default function HomePage() {
   return (
-    <main>
-      {/* Hero */}
-      <section className="mx-auto max-w-6xl px-6 py-16">
-        <p className="text-sm text-gray-600">
-          Integrated Engineering • Security • Automation • Renewable Energy • Industrial Services
-        </p>
+    <main className="bg-white text-[#1F2933]">
 
-        <h1 className="mt-4 text-4xl font-bold tracking-tight md:text-5xl">
-          Integrated Engineering Solutions for a Smarter, Safer Future
-        </h1>
-
-        <p className="mt-4 max-w-2xl text-lg text-gray-600">
-          T.N Engineering Pty Ltd blends proven mechanical expertise with modern digital technology
-          to deliver security, automation, renewable energy and heavy industrial support — built for reliability,
-          safety and performance.
-        </p>
-
-        <div className="mt-8 flex flex-wrap gap-3">
-          <Link
-            href="/contact"
-            className="rounded-xl bg-black px-5 py-3 text-sm font-medium text-white"
-          >
-            Request a Quote
-          </Link>
-          <a
-            href="tel:+27733061438"
-            className="rounded-xl border border-gray-300 px-5 py-3 text-sm font-medium"
-          >
-            Call (+27) 73 306 1438
-          </a>
-          <Link
-            href="/services"
-            className="rounded-xl border border-gray-300 px-5 py-3 text-sm font-medium"
-          >
-            View Services
-          </Link>
+      {/* ================= HERO ================= */}
+      <section className="relative">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/hero/hero-solar.png"
+            alt="Solar and engineering installation by T.N Engineering"
+            fill
+            priority
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-[#0B3C5D]/80" />
         </div>
 
-        <div className="mt-10 grid gap-3 text-sm text-gray-700 md:grid-cols-4">
-          <div className="rounded-2xl border p-4">Single-provider integrated solutions</div>
-          <div className="rounded-2xl border p-4">Certified expertise & safe delivery</div>
-          <div className="rounded-2xl border p-4">Smart systems & modern tooling</div>
-          <div className="rounded-2xl border p-4">Tailored installs for any site</div>
+        <div className="relative mx-auto max-w-7xl px-6 py-32 text-white">
+          <h1 className="max-w-3xl text-4xl font-bold leading-tight md:text-5xl">
+            Integrated Engineering Solutions for a
+            <span className="text-[#F5B700]"> Smarter, Safer </span>
+            and
+            <span className="text-[#3FA34D]"> Sustainable </span>
+            Future
+          </h1>
+
+          <p className="mt-6 max-w-2xl text-lg text-white/90">
+            T.N Engineering Pty Ltd delivers end-to-end engineering services
+            across security systems, smart technology, renewable energy,
+            mechanical engineering and heavy equipment installations.
+          </p>
+
+          <div className="mt-10 flex flex-wrap gap-4">
+            <Link
+              href="/contact"
+              className="rounded-xl bg-[#F5B700] px-6 py-3 text-sm font-semibold text-[#0B3C5D] hover:bg-yellow-400"
+            >
+              Request a Quote
+            </Link>
+
+            <a
+              href="tel:+27733061438"
+              className="rounded-xl border border-white/40 px-6 py-3 text-sm font-medium hover:bg-white/10"
+            >
+              Call (+27) 73 306 1438
+            </a>
+          </div>
         </div>
       </section>
 
-      {/* Services */}
-      <section className="border-t bg-gray-50">
-        <div className="mx-auto max-w-6xl px-6 py-14">
-          <div className="flex items-end justify-between gap-6">
-            <div>
-              <h2 className="text-2xl font-semibold">Core Services</h2>
-              <p className="mt-2 text-gray-600">
-                End-to-end solutions across security, smart integration, energy and industry.
-              </p>
-            </div>
-            <Link href="/services" className="text-sm font-medium underline">
-              Explore all services
-            </Link>
-          </div>
+      {/* ================= SERVICES ================= */}
+      <section className="bg-[#F3F4F6]">
+        <div className="mx-auto max-w-7xl px-6 py-20">
+          <h2 className="text-3xl font-semibold text-[#0B3C5D]">
+            Our Core Services
+          </h2>
+          <p className="mt-3 max-w-2xl text-gray-600">
+            We provide integrated engineering solutions backed by certified
+            expertise, modern technology and uncompromising safety standards.
+          </p>
 
-          <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {services.map((s) => (
-              <div key={s.title} className="rounded-2xl border bg-white p-6">
-                <div className="font-semibold">{s.title}</div>
-                <p className="mt-2 text-sm text-gray-600">{s.desc}</p>
+          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+
+            {/* Service Card */}
+            {[
+              {
+                title: "Access Control & Security Systems",
+                image: "/images/services/security.jpg",
+                desc: "Biometric access, CCTV, intrusion detection and centralized security management.",
+              },
+              {
+                title: "Smart Technology Integration",
+                image: "/images/services/smart-tech.jpg",
+                desc: "Smart lighting, automation, intelligent circuit breakers and remote control systems.",
+              },
+              {
+                title: "Renewable Energy Systems",
+                image: "/images/services/renewable.jpg",
+                desc: "Grid-tied, hybrid and off-grid solar solutions with battery storage.",
+              },
+              {
+                title: "Mechanical Engineering",
+                image: "/images/services/mechanical.jpg",
+                desc: "HVAC systems, plant installations, fabrication and mechanical optimisation.",
+              },
+              {
+                title: "Rigging & Heavy Equipment Services",
+                image: "/images/services/rigging.jpg",
+                desc: "Certified lifting, machinery relocation and complex industrial rigging.",
+              },
+            ].map((service) => (
+              <div
+                key={service.title}
+                className="overflow-hidden rounded-2xl bg-white shadow-sm transition hover:shadow-md"
+              >
+                <div className="relative h-48">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+
+                <div className="p-6">
+                  <h3 className="font-semibold text-[#0B3C5D]">
+                    {service.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-gray-600">
+                    {service.desc}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="mx-auto max-w-6xl px-6 py-14">
-        <h2 className="text-2xl font-semibold">Why Choose T.N Engineering</h2>
+      {/* ================= WHY US ================= */}
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-6 py-20">
+          <h2 className="text-3xl font-semibold text-[#0B3C5D]">
+            Why Choose T.N Engineering
+          </h2>
 
-        <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {[
-            "Integrated Solutions (single-provider advantage)",
-            "Certified Expertise (qualified engineers & technicians)",
-            "Quality Assurance (stringent safety and standards)",
-            "Innovation Focus (modern tech implementation)",
-            "Client-Centric Approach (tailored solutions)",
-            "Proven Track Record (multi-sector delivery)",
-          ].map((item) => (
-            <div key={item} className="rounded-2xl border p-6">
-              <div className="font-medium">{item}</div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="border-t">
-        <div className="mx-auto max-w-6xl px-6 py-14">
-          <div className="rounded-3xl bg-black p-10 text-white">
-            <h2 className="text-3xl font-semibold">Contact us to engineer your success.</h2>
-            <p className="mt-3 max-w-2xl text-white/80">
-              Tell us what you need — security, automation, solar, mechanical work or rigging — and we’ll propose
-              a practical, compliant solution.
-            </p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <Link href="/contact" className="rounded-xl bg-white px-5 py-3 text-sm font-medium text-black">
-                Request a Quote
-              </Link>
-              <a href="mailto:info@tnengineering.co.za" className="rounded-xl border border-white/30 px-5 py-3 text-sm font-medium">
-                Email Us
-              </a>
-            </div>
+          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {[
+              "Integrated mechanical & electronic solutions",
+              "Certified engineers and technicians",
+              "Strict safety and quality compliance",
+              "Modern, future-ready technologies",
+              "Client-centric and customised delivery",
+              "Proven installations across sectors",
+            ].map((point) => (
+              <div
+                key={point}
+                className="rounded-2xl border border-gray-200 p-6"
+              >
+                <span className="text-[#3FA34D] font-semibold">✓</span>
+                <span className="ml-2 text-sm">{point}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
+
+      {/* ================= CTA ================= */}
+      <section className="bg-[#0B3C5D]">
+        <div className="mx-auto max-w-7xl px-6 py-20 text-white">
+          <h2 className="text-3xl font-semibold">
+            Let’s Engineer Your Success
+          </h2>
+
+          <p className="mt-4 max-w-2xl text-white/80">
+            Whether you need security systems, solar energy, automation or
+            heavy-duty engineering support, our team is ready to deliver.
+          </p>
+
+          <div className="mt-8 flex flex-wrap gap-4">
+            <Link
+              href="/contact"
+              className="rounded-xl bg-[#F5B700] px-6 py-3 text-sm font-semibold text-[#0B3C5D]"
+            >
+              Get in Touch
+            </Link>
+
+            <a
+              href="mailto:info@tnengineering.co.za"
+              className="rounded-xl border border-white/40 px-6 py-3 text-sm"
+            >
+              info@tnengineering.co.za
+            </a>
+          </div>
+        </div>
+      </section>
+
     </main>
   );
 }
