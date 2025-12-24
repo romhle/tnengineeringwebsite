@@ -30,7 +30,7 @@ export default function Navbar() {
         <Link href="/" className="flex items-center gap-3">
           <div className="relative h-10 w-10 overflow-hidden rounded-xl bg-white">
             <Image
-              src="/images/logo/tn-engineering-logo.png"
+              src="/images/logo/tn-engineering-logo.JPG"
               alt="T.N Engineering"
               fill
               className="object-contain p-1"
