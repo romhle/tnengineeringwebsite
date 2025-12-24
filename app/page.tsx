@@ -74,7 +74,12 @@ function IconWrench(props: React.SVGProps<SVGSVGElement>) {
 function IconCrane(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" fill="none" {...props}>
-      <path d="M4 20h16" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+      <path
+        d="M4 20h16"
+        stroke="currentColor"
+        strokeWidth="1.7"
+        strokeLinecap="round"
+      />
       <path
         d="M6 20V5h8l4 4v11"
         stroke="currentColor"
@@ -135,13 +140,6 @@ const services = [
   },
 ];
 
-const highlights = [
-  { label: "Integrated solutions", value: "Mechanical + Digital" },
-  { label: "Safety-first delivery", value: "Quality & compliance" },
-  { label: "Modern technology", value: "AI CCTV • Smart energy" },
-  { label: "Multi-sector experience", value: "Residential to industrial" },
-];
-
 const projects = [
   { src: "/images/projects/project-1.png", alt: "Battery bank installation" },
   { src: "/images/projects/project-2.png", alt: "Inverter & distribution boards" },
@@ -177,7 +175,7 @@ export default function HomePage() {
         }}
       />
 
-      {/* HERO */}
+      {/* HERO (simplified + premium) */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           <Image
@@ -187,103 +185,114 @@ export default function HomePage() {
             priority
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-[#0B3C5D]/75" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-white/10" />
+          <div className="absolute inset-0 bg-[#0B3C5D]/80" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/25" />
         </div>
 
-        <div className="relative mx-auto max-w-7xl px-6 pb-12 pt-24 text-white md:pt-28">
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs backdrop-blur">
-            <span className="h-2 w-2 rounded-full" style={{ backgroundColor: brand.green }} />
-            Integrated Engineering • Security • Energy • Industrial
-          </div>
-
-          <div className="mt-6 grid gap-10 lg:grid-cols-12 lg:items-end">
-            <div className="lg:col-span-7">
-              <h1 className="text-4xl font-bold leading-tight md:text-5xl">
-                Engineering a{" "}
-                <span style={{ color: brand.yellow }}>Smarter</span>,{" "}
-                <span style={{ color: brand.green }}>Safer</span> Future —
-                Built to Perform.
-              </h1>
-
-              <p className="mt-4 max-w-2xl text-lg text-white/90">
-                T.N Engineering Pty Ltd delivers robust, certified solutions across
-                access control & security, smart technology integration, renewable energy,
-                mechanical engineering and heavy equipment services.
-              </p>
-
-              <div className="mt-8 flex flex-wrap gap-3">
-                <Link
-                  href="/contact"
-                  className="rounded-xl px-6 py-3 text-sm font-semibold text-[#0B3C5D]"
-                  style={{ backgroundColor: brand.yellow }}
-                >
-                  Request a Quote
-                </Link>
-
-                <a
-                  href="tel:+27733061438"
-                  className="rounded-xl border border-white/30 px-6 py-3 text-sm font-medium hover:bg-white/10"
-                >
-                  Call (+27) 73 306 1438
-                </a>
-
-                <Link
-                  href="/services"
-                  className="rounded-xl border border-white/30 px-6 py-3 text-sm font-medium hover:bg-white/10"
-                >
-                  View Services
-                </Link>
-              </div>
+        <div className="relative mx-auto max-w-7xl px-6 pb-16 pt-24 text-white md:pt-28">
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs backdrop-blur">
+              <span className="h-2 w-2 rounded-full" style={{ backgroundColor: brand.green }} />
+              Integrated engineering solutions across South Africa
             </div>
 
-            {/* Hero proof panel */}
-            <div className="lg:col-span-5">
-              <div className="rounded-3xl border border-white/15 bg-white/10 p-6 backdrop-blur">
-                <div className="text-sm font-semibold">What you get with us</div>
-                <div className="mt-4 grid gap-3">
-                  {highlights.map((h) => (
-                    <div
-                      key={h.label}
-                      className="flex items-start justify-between gap-6 rounded-2xl bg-black/20 p-4"
-                    >
-                      <div className="text-sm text-white/80">{h.label}</div>
-                      <div className="text-sm font-semibold">{h.value}</div>
-                    </div>
-                  ))}
-                </div>
+            <h1 className="mt-6 text-4xl font-bold leading-tight md:text-6xl">
+              Integrated Engineering.
+              <span className="block" style={{ color: brand.yellow }}>
+                Built for Safety. Designed to Last.
+              </span>
+            </h1>
 
-                <div className="mt-5 grid grid-cols-3 gap-3">
-                  <div className="rounded-2xl bg-black/20 p-4">
-                    <div className="text-xs text-white/70">Response</div>
-                    <div className="mt-1 text-lg font-semibold">Fast</div>
-                  </div>
-                  <div className="rounded-2xl bg-black/20 p-4">
-                    <div className="text-xs text-white/70">Delivery</div>
-                    <div className="mt-1 text-lg font-semibold">Certified</div>
-                  </div>
-                  <div className="rounded-2xl bg-black/20 p-4">
-                    <div className="text-xs text-white/70">Focus</div>
-                    <div className="mt-1 text-lg font-semibold">Safety</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+            <p className="mt-4 text-base text-white/85 md:text-lg">
+              Security • Smart Technology • Renewable Energy • Mechanical Engineering • Rigging
+            </p>
 
-          {/* Trust strip */}
-          <div className="mt-12 grid gap-3 md:grid-cols-4">
-            {[
-              "Single-provider integrated engineering",
-              "Quality workmanship & compliance",
-              "Modern tech + robust mechanical base",
-              "Residential • Commercial • Industrial",
-            ].map((t) => (
-              <div
-                key={t}
-                className="rounded-2xl border border-white/15 bg-white/10 p-4 text-sm text-white/85 backdrop-blur"
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link
+                href="/contact"
+                className="rounded-xl px-6 py-3 text-sm font-semibold"
+                style={{ backgroundColor: brand.yellow, color: brand.blue }}
               >
-                {t}
+                Request a Quote
+              </Link>
+
+              <a
+                href="tel:+27733061438"
+                className="rounded-xl border border-white/30 px-6 py-3 text-sm font-semibold text-white/95 hover:bg-white/10"
+              >
+                Call (+27) 73 306 1438
+              </a>
+            </div>
+
+            {/* Minimal trust signals (3 only) */}
+            <div className="mt-10 grid gap-3 sm:grid-cols-3">
+              {[
+                { t: "Certified technicians", dot: brand.green },
+                { t: "Safety-first delivery", dot: brand.yellow },
+                { t: "Residential to industrial", dot: brand.green },
+              ].map((x) => (
+                <div
+                  key={x.t}
+                  className="flex items-center gap-3 rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-sm text-white/90 backdrop-blur"
+                >
+                  <span className="h-2 w-2 rounded-full" style={{ backgroundColor: x.dot }} />
+                  <span className="font-medium">{x.t}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* WHY US (moved proof from hero into its own clean section) */}
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-6 py-16">
+          <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+            <div>
+              <h2 className="text-3xl font-semibold" style={{ color: brand.blue }}>
+                Why T.N Engineering
+              </h2>
+              <p className="mt-2 max-w-2xl text-gray-600">
+                We combine solid engineering fundamentals with modern technology to deliver
+                reliable, compliant solutions.
+              </p>
+            </div>
+            <Link href="/contact" className="text-sm font-semibold underline">
+              Get a quote
+            </Link>
+          </div>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {[
+              {
+                k: "Integrated solutions",
+                v: "Mechanical + digital delivery under one team.",
+                accent: brand.yellow,
+              },
+              {
+                k: "Quality & compliance",
+                v: "Safety-first execution and clean workmanship.",
+                accent: brand.green,
+              },
+              {
+                k: "Modern technology",
+                v: "Smart energy monitoring, automation and AI CCTV.",
+                accent: brand.blue,
+              },
+              {
+                k: "Multi-sector experience",
+                v: "Residential, commercial and industrial environments.",
+                accent: brand.yellow,
+              },
+            ].map((c) => (
+              <div key={c.k} className="rounded-3xl border border-gray-200 bg-white p-6 shadow-sm">
+                <div className="flex items-center gap-2">
+                  <span className="h-2 w-2 rounded-full" style={{ backgroundColor: c.accent }} />
+                  <div className="text-base font-semibold" style={{ color: brand.blue }}>
+                    {c.k}
+                  </div>
+                </div>
+                <p className="mt-3 text-sm text-gray-600">{c.v}</p>
               </div>
             ))}
           </div>
@@ -506,8 +515,8 @@ export default function HomePage() {
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link
                   href="/contact"
-                  className="rounded-xl px-6 py-3 text-sm font-semibold text-[#0B3C5D]"
-                  style={{ backgroundColor: brand.yellow }}
+                  className="rounded-xl px-6 py-3 text-sm font-semibold"
+                  style={{ backgroundColor: brand.yellow, color: brand.blue }}
                 >
                   Request a Quote
                 </Link>
