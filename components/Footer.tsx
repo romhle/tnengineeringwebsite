@@ -145,6 +145,12 @@ export default function Footer() {
             Engineering a Smarter, Safer, More Sustainable Future
           </p>
         </div>
+
+        {/* Romhle attribution (subtle, enterprise-grade) */}
+        <div className="mt-6 text-center text-xs text-white/50">
+          Digital delivery & systems engineered by{" "}
+          <span className="font-semibold text-white/70">Romhle</span>
+        </div>
       </div>
     </footer>
   );
