@@ -110,8 +110,9 @@ export default function Footer() {
                 </a>
               </p>
 
+              {/* ✅ ONLY CHANGE HERE */}
               <Link
-                href="/contact"
+                href="/request-quote"
                 className="inline-block rounded-xl px-4 py-2 text-sm font-semibold transition"
                 style={{
                   backgroundColor: brand.yellow,
@@ -146,7 +147,7 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Romhle attribution (subtle, enterprise-grade) */}
+        {/* Romhle attribution */}
         <div className="mt-6 text-center text-xs text-white/50">
           Digital delivery & systems engineered by{" "}
           <span className="font-semibold text-white/70">Romhle</span>

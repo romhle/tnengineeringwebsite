@@ -53,7 +53,6 @@ export default function Navbar() {
               className="group relative text-sm font-medium text-white/85 transition hover:text-white"
             >
               {l.label}
-              {/* underline accent */}
               <span
                 className="absolute -bottom-2 left-0 h-[2px] w-0 transition-all duration-300 group-hover:w-full"
                 style={{ backgroundColor: brand.green }}
@@ -72,8 +71,9 @@ export default function Navbar() {
             Call
           </a>
 
+          {/* ✅ ONLY CHANGE HERE */}
           <Link
-            href="/contact"
+            href="/request-quote"
             className="rounded-xl px-4 py-2 text-sm font-semibold transition hover:opacity-95"
             style={{ backgroundColor: brand.yellow, color: brand.blue }}
           >

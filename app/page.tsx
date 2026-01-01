@@ -129,8 +129,9 @@ export default function HomePage() {
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
+            {/* ✅ ONLY CHANGE HERE */}
             <Link
-              href="/contact"
+              href="/request-quote"
               className="rounded-xl px-6 py-3 text-sm font-semibold"
               style={{ backgroundColor: brand.yellow, color: brand.blue }}
             >
