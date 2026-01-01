@@ -31,12 +31,7 @@ function IconCog(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" fill="none" {...props}>
       <path d="M12 15.5a3.5 3.5 0 100-7 3.5 3.5 0 000 7z" stroke="currentColor" strokeWidth="1.7" />
-      <path
-        d="M19.4 15a8.3 8.3 0 000-6l-2.1.3a6.6 6.6 0 00-1.2-1.2L16.4 6a8.3 8.3 0 00-6 0l.3 2.1a6.6 6.6 0 00-1.2 1.2L7.4 9a8.3 8.3 0 000 6l2.1-.3a6.6 6.6 0 001.2 1.2L10.4 18a8.3 8.3 0 006 0l-.3-2.1a6.6 6.6 0 001.2-1.2l2.1.3z"
-        stroke="currentColor"
-        strokeWidth="1.7"
-        strokeLinejoin="round"
-      />
+      <path d="M19.4 15a8.3 8.3 0 000-6l-2.1.3a6.6 6.6 0 00-1.2-1.2L16.4 6a8.3 8.3 0 00-6 0l.3 2.1a6.6 6.6 0 00-1.2 1.2L7.4 9a8.3 8.3 0 000 6l2.1-.3a6.6 6.6 0 001.2 1.2L10.4 18a8.3 8.3 0 006 0l-.3-2.1a6.6 6.6 0 001.2-1.2l2.1.3z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
     </svg>
   );
 }
@@ -65,35 +60,35 @@ function IconCrane(props: React.SVGProps<SVGSVGElement>) {
 const services = [
   {
     title: "Access Control & Security Systems",
-    desc: "Biometrics, mobile credentials, CCTV, perimeter protection and centralized management.",
+    desc: "Biometrics, access cards, CCTV, perimeter protection and centralised monitoring.",
     icon: IconShield,
     image: "/images/services/security.jpg",
     accent: brand.yellow,
   },
   {
     title: "Smart Technology Integration",
-    desc: "Smart lighting, intelligent breakers, automation scenarios and unified control platforms.",
+    desc: "Automation, smart lighting, intelligent breakers and unified control platforms.",
     icon: IconCog,
     image: "/images/services/smart-tech.jpg",
     accent: brand.blue,
   },
   {
-    title: "Renewable Energy Systems",
-    desc: "Grid-tied, hybrid and off-grid solar with battery storage and monitoring.",
+    title: "Renewable Energy & Battery Systems",
+    desc: "Solar PV, hybrid systems, battery backup and energy monitoring solutions.",
     icon: IconBolt,
     image: "/images/services/renewable.jpg",
     accent: brand.green,
   },
   {
     title: "Mechanical Engineering",
-    desc: "HVAC, fabrication, plant maintenance, machining and mechanical optimisation.",
+    desc: "HVAC, fabrication and mechanical services available for selected projects.",
     icon: IconWrench,
     image: "/images/services/mechanical.jpg",
     accent: brand.blue,
   },
   {
     title: "Rigging & Heavy Equipment",
-    desc: "Certified lifting, machine relocation, complex lift planning and safe execution.",
+    desc: "Specialist lifting and equipment relocation services on request.",
     icon: IconCrane,
     image: "/images/services/rigging.jpg",
     accent: brand.yellow,
@@ -125,11 +120,12 @@ export default function HomePage() {
           </h1>
 
           <p className="mt-4 max-w-xl text-white/85">
-            Integrated engineering solutions for safety-critical environments.
+            Integrated engineering solutions for security, energy resilience
+            and smart infrastructure.
           </p>
 
           <p className="mt-3 text-sm text-white/80">
-            Security • Smart Technology • Renewable Energy • Mechanical • Rigging
+            Smart Access • CCTV • Solar PV • Battery Backup
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
@@ -159,24 +155,22 @@ export default function HomePage() {
           </h2>
 
           <p className="mt-4 max-w-3xl text-gray-600">
-            We exist because engineering failure is not an option.
-          </p>
-
-          <p className="mt-4 max-w-3xl text-gray-600">
-            In environments where systems protect people, assets and operations,
-            work must be done correctly the first time. Our role is to remove risk,
-            failure and uncertainty through disciplined, safety-first delivery.
+            We exist because failure in security and energy systems has real consequences.
+            Our focus is delivering solutions that work reliably, safely and correctly
+            from day one.
           </p>
 
           <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {[
-              "Risk-aware delivery",
-              "Safety-first execution",
-              "Integrated capability",
-              "Built to last",
+              "Honest, capability-based delivery",
+              "Safety-first installations",
+              "Real solutions for real problems",
+              "Built for South African conditions",
             ].map((t) => (
               <div key={t} className="rounded-3xl border border-gray-200 bg-white p-6">
-                <div className="font-semibold" style={{ color: brand.blue }}>{t}</div>
+                <div className="font-semibold" style={{ color: brand.blue }}>
+                  {t}
+                </div>
               </div>
             ))}
           </div>
@@ -212,6 +206,37 @@ export default function HomePage() {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* PROJECTS */}
+      <section className="bg-white py-20">
+        <div className="mx-auto max-w-7xl px-6">
+          <h2 className="text-3xl font-semibold" style={{ color: brand.blue }}>
+            Recent Installations
+          </h2>
+
+          <p className="mt-2 max-w-2xl text-gray-600">
+            A selection of real systems installed by our team across security
+            and energy solutions.
+          </p>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {[
+              { src: "/images/projects/project-access.jpg", label: "Smart Access Control" },
+              { src: "/images/projects/project-cctv.jpg", label: "CCTV & Surveillance" },
+              { src: "/images/projects/project-solar.jpg", label: "Solar PV Installation" },
+              { src: "/images/projects/project-battery.jpg", label: "Battery Backup System" },
+            ].map((p) => (
+              <div key={p.src} className="group relative aspect-[4/3] overflow-hidden rounded-3xl">
+                <Image src={p.src} alt={p.label} fill className="object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4 rounded-xl bg-white/90 px-4 py-2 text-sm font-semibold text-[#0B3C5D]">
+                  {p.label}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
