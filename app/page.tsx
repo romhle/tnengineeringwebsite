@@ -78,31 +78,21 @@ export default function HomePage() {
   return (
     <main className="bg-white text-[#1F2933]">
 
-      {/* HERO — PURPOSE FIRST */}
+      {/* HERO — POSITIONING */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
-          <Image
-            src="/images/hero/hero-solar.jpg"
-            alt="T.N Engineering installation"
-            fill
-            priority
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-[#0B3C5D]/75" />
+          <Image src="/images/hero/hero-solar.jpg" alt="T.N Engineering installation" fill priority className="object-cover" />
+          <div className="absolute inset-0 bg-[#0B3C5D]/70" />
         </div>
 
         <div className="relative mx-auto max-w-7xl px-6 py-28 text-white">
           <div className="max-w-3xl">
             <h1 className="text-4xl font-bold leading-tight md:text-6xl">
-              We Engineer Systems That Must Work —
-              <span className="block" style={{ color: brand.yellow }}>
-                Safely, Reliably, Correctly.
-              </span>
+              We Engineer Systems That Must Work.
             </h1>
 
-            <p className="mt-5 text-lg text-white/90">
-              T.N Engineering exists to remove risk, failure, and uncertainty from critical
-              environments through disciplined, safety-first engineering delivery.
+            <p className="mt-4 text-lg text-white/90">
+              Integrated engineering solutions for safety-critical environments.
             </p>
 
             <p className="mt-3 text-sm text-white/80">
@@ -121,19 +111,33 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* WHY US */}
+      {/* WHY */}
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-6">
-          <h2 className="text-3xl font-semibold" style={{ color: brand.blue }}>Why T.N Engineering</h2>
+          <h2 className="text-3xl font-semibold" style={{ color: brand.blue }}>
+            Why T.N Engineering
+          </h2>
+
+          <p className="mt-4 max-w-3xl text-gray-600">
+            We exist because engineering failure is not an option.
+          </p>
+
+          <p className="mt-4 max-w-3xl text-gray-600">
+            In environments where systems protect people, assets, and operations, work must be done
+            correctly the first time. Our role is to remove risk, failure, and uncertainty through
+            disciplined, safety-first engineering delivery.
+          </p>
+
           <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {[
-              "Integrated mechanical and digital engineering",
-              "Safety-first, compliance-driven execution",
-              "Modern technology with proven fundamentals",
-              "Experience across residential and industrial sites",
-            ].map((t) => (
-              <div key={t} className="rounded-3xl border border-gray-200 bg-white p-6">
-                <p className="text-sm text-gray-700">{t}</p>
+              { k: "Risk-aware delivery", v: "Engineering decisions made with real-world consequences in mind." },
+              { k: "Safety first", v: "Compliance, procedures, and workmanship are non-negotiable." },
+              { k: "Integrated capability", v: "Mechanical and digital systems delivered under one accountable team." },
+              { k: "Built to last", v: "Focus on reliability, maintainability, and long-term performance." },
+            ].map((c) => (
+              <div key={c.k} className="rounded-3xl border border-gray-200 bg-white p-6">
+                <div className="font-semibold" style={{ color: brand.blue }}>{c.k}</div>
+                <p className="mt-2 text-sm text-gray-600">{c.v}</p>
               </div>
             ))}
           </div>
@@ -144,6 +148,7 @@ export default function HomePage() {
       <section className="bg-[#F3F4F6] py-20">
         <div className="mx-auto max-w-7xl px-6">
           <h2 className="text-3xl font-semibold" style={{ color: brand.blue }}>Core Services</h2>
+
           <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {services.map((s) => {
               const Icon = s.icon;
@@ -172,6 +177,7 @@ export default function HomePage() {
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-6">
           <h2 className="text-3xl font-semibold" style={{ color: brand.blue }}>Real Installations</h2>
+
           <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {projects.map((p) => (
               <div key={p} className="relative aspect-[4/3] overflow-hidden rounded-3xl">
@@ -200,3 +206,4 @@ export default function HomePage() {
     </main>
   );
 }
+
